@@ -1,7 +1,26 @@
+import Link from "next/link"
 
 const NavBar:React.FC = () =>{
   return (
-    <header>NavBar</header>
+    <header>
+      <nav>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/projects">Projects</Link>
+        <Link href="/articles">Articles</Link>
+      </nav>
+
+      <div>Logo</div>
+
+      <nav>
+        <Link href="/">T</Link>
+        <Link href="/">T</Link>
+        <Link href="/">T</Link>
+        <Link href="/">T</Link>
+        <Link href="/">T</Link>
+        <Link href="/">T</Link>
+      </nav>
+    </header>
   )
 }
 
