@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Logo from "./Logo"
 
 const NavBar:React.FC = () =>{
   return (
@@ -10,7 +11,7 @@ const NavBar:React.FC = () =>{
         <Link href="/articles">Articles</Link>
       </nav>
 
-      <div>Logo</div>
+      <Logo/>
 
       <nav>
         <Link href="/" target="_blank">T</Link>
