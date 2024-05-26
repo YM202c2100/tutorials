@@ -13,12 +13,12 @@ const NavBar:React.FC = () =>{
       <div>Logo</div>
 
       <nav>
-        <Link href="/">T</Link>
-        <Link href="/">T</Link>
-        <Link href="/">T</Link>
-        <Link href="/">T</Link>
-        <Link href="/">T</Link>
-        <Link href="/">T</Link>
+        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">T</Link>
       </nav>
     </header>
   )
