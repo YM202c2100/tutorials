@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const NavBar:React.FC = () =>{
   return (
-    <header>
+    <header className="flex justify-between items-center py-8 mx-32">
       <nav>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
