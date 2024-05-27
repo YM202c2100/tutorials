@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Logo from "./Logo"
 import { usePathname } from "next/navigation"
+import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons"
 
 interface PropsCNL{
   href:string,
@@ -38,19 +39,19 @@ const NavBar:React.FC = () =>{
       </div>
 
       <nav>
-        <Link href="/" target="_blank">
+        <Link href="https://x.com" target="_blank">
           <TwitterIcon className=""/>
         </Link>
-        <Link href="/" target="_blank">
+        <Link href="https://github.com" target="_blank">
           <GithubIcon className=""/>
         </Link>
-        <Link href="/" target="_blank">
+        <Link href="https://linkedIn.com" target="_blank">
           <LinkedInIcon className=""/>
         </Link>
-        <Link href="/" target="_blank">
+        <Link href="https://pinterest.jp" target="_blank">
           <PinterestIcon className=""/>
         </Link>
-        <Link href="/" target="_blank">
+        <Link href="https://dribbble.com" target="_blank">
           <DribbbleIcon className=""/>
         </Link>
         <Link href="/" target="_blank">T</Link>
