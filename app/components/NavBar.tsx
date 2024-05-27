@@ -21,10 +21,10 @@ const NavBar:React.FC = () =>{
   return (
     <header className="flex justify-between items-center py-8 mx-32">
       <nav>
-        <CustomNavLink href="/" title="Home"/>
-        <CustomNavLink href="/about" title="About"/>
-        <CustomNavLink href="/projects" title="Projects"/>
-        <CustomNavLink href="/articles" title="Articles"/>
+        <CustomNavLink href="/" title="Home" className="mr-4"/>
+        <CustomNavLink href="/about" title="About" className="mx-4"/>
+        <CustomNavLink href="/projects" title="Projects" className="mx-4"/>
+        <CustomNavLink href="/articles" title="Articles" className="ml-4"/>
       </nav>
 
       <div className="absolute left-1/2 top-2 translate-x-[-50%]">
