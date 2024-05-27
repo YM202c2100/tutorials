@@ -7,20 +7,22 @@ interface PropsCNL{
   className?:string
 }
 const CustomNavLink:React.FC<PropsCNL> = ({href,title,className})=>{
-  return(
-    <Link 
-      href={href}
-      className={className}
-    >
-      {title}
-    </Link>
-  )
+  return(<>
+    <div className={className}>
+      <Link 
+        href={href}
+      >
+        {title}
+      </Link>
+      <span className="bg-black block h-0.5 w-full">&nbsp;</span>
+    </div>
+    </>)
 }
 
 const NavBar:React.FC = () =>{
   return (
     <header className="flex justify-between items-center py-8 mx-32">
-      <nav>
+      <nav className="flex">
         <CustomNavLink href="/" title="Home" className="mr-4"/>
         <CustomNavLink href="/about" title="About" className="mx-4"/>
         <CustomNavLink href="/projects" title="Projects" className="mx-4"/>
