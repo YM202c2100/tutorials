@@ -8,13 +8,13 @@ interface PropsCNL{
 }
 const CustomNavLink:React.FC<PropsCNL> = ({href,title,className})=>{
   return(<>
-    <div className={className}>
+    <div className={`${className} group`}>
       <Link 
         href={href}
       >
         {title}
       </Link>
-      <span className="bg-black block h-0.5 w-full">&nbsp;</span>
+      <span className="bg-black block h-0.5 w-0 group-hover:w-full transition-[width] duration-150 ease-in">&nbsp;</span>
     </div>
     </>)
 }
