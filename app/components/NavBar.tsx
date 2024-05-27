@@ -38,11 +38,21 @@ const NavBar:React.FC = () =>{
       </div>
 
       <nav>
-        <Link href="/" target="_blank">T</Link>
-        <Link href="/" target="_blank">T</Link>
-        <Link href="/" target="_blank">T</Link>
-        <Link href="/" target="_blank">T</Link>
-        <Link href="/" target="_blank">T</Link>
+        <Link href="/" target="_blank">
+          <TwitterIcon className=""/>
+        </Link>
+        <Link href="/" target="_blank">
+          <GithubIcon className=""/>
+        </Link>
+        <Link href="/" target="_blank">
+          <LinkedInIcon className=""/>
+        </Link>
+        <Link href="/" target="_blank">
+          <PinterestIcon className=""/>
+        </Link>
+        <Link href="/" target="_blank">
+          <DribbbleIcon className=""/>
+        </Link>
         <Link href="/" target="_blank">T</Link>
       </nav>
     </header>
