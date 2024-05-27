@@ -11,7 +11,9 @@ const NavBar:React.FC = () =>{
         <Link href="/articles">Articles</Link>
       </nav>
 
-      <Logo/>
+      <div className="absolute left-1/2 top-2 translate-x-[-50%]">
+        <Logo/>
+      </div>
 
       <nav>
         <Link href="/" target="_blank">T</Link>
