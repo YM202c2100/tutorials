@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import Logo from "./Logo"
+import { usePathname } from "next/navigation"
 
 interface PropsCNL{
   href:string,
@@ -7,6 +10,7 @@ interface PropsCNL{
   className?:string
 }
 const CustomNavLink:React.FC<PropsCNL> = ({href,title,className})=>{
+  const currentPath = usePathname()
   return(<>
     <div className={`${className} group`}>
       <Link 
@@ -14,7 +18,7 @@ const CustomNavLink:React.FC<PropsCNL> = ({href,title,className})=>{
       >
         {title}
       </Link>
-      <span className="bg-black block h-0.5 w-0 group-hover:w-full transition-[width] duration-150 ease-in">&nbsp;</span>
+      <span className={`bg-black block h-0.5 group-hover:w-full transition-[width] duration-150 ease-in ${(currentPath===href)?"w-full":"w-0"}`}>&nbsp;</span>
     </div>
     </>)
 }
