@@ -38,7 +38,7 @@ const NavBar:React.FC = () =>{
         <Logo/>
       </div>
 
-      <nav>
+      <nav className="flex">
         <Link href="https://x.com" target="_blank">
           <TwitterIcon className=""/>
         </Link>
