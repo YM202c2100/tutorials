@@ -31,7 +31,7 @@ const AnimatedTitle:React.FC<animatedTitleProps> = ({text})=>{
   return(<>
     <motion.h1 variants={parentVariants} initial="initial" animate="animate">
       {text.split(" ").map((word, idx)=>
-        <motion.span key={word+"-"+idx} variants={variants} className="inline-block">
+        <motion.span key={word+"-"+idx} variants={variants} className={`inline-block font-bold`}>
           {word}&nbsp;
         </motion.span>
       )}
