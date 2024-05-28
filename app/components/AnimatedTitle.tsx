@@ -2,10 +2,11 @@
 
 import { motion, stagger } from "framer-motion"
 interface animatedTitleProps{
-  text:string
+  text:string,
+  className?:string
 }
 
-const AnimatedTitle:React.FC<animatedTitleProps> = ({text})=>{
+const AnimatedTitle:React.FC<animatedTitleProps> = ({text, className})=>{
   const parentVariants = {
     initial:{
     },
