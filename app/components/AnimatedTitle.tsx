@@ -1,18 +1,43 @@
+"use client"
 
+import { motion, stagger } from "framer-motion"
 interface animatedTitleProps{
   text:string
 }
 
 const AnimatedTitle:React.FC<animatedTitleProps> = ({text})=>{
-  return(
-    <h1>
+  const parentVariants = {
+    initial:{
+    },
+    animate:{
+      transition:{
+        staggerChildren:0.05
+      }
+    },
+  }
+  const variants = {
+    initial:{
+      opacity:0,
+      y:10
+    },
+    animate:{
+      opacity:1,
+      y:0,
+      transition:{
+        duration:0.5
+      }
+    },
+  }
+  return(<>
+    <motion.h1 variants={parentVariants} initial="initial" animate="animate">
       {text.split(" ").map((word, idx)=>
-        <span key={word+"-"+idx}>
+        <motion.span key={word+"-"+idx} variants={variants} className="inline-block">
           {word}&nbsp;
-        </span>
+        </motion.span>
       )}
-    </h1>
-  )
+    </motion.h1>
+    
+  </>)
 }
 
 export default AnimatedTitle
