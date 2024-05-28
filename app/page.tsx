@@ -6,9 +6,11 @@ import AnimatedTitle from "./components/AnimatedTitle";
 export default function Page() {
   return (<>
     <NavBar/>
-    <div className="w-1/2">
-      <Image src={profilePic} alt="Picture of developer"  className="pl-32"/>
+    <div className="flex items-center">
+      <div className="w-1/2">
+        <Image src={profilePic} alt="Picture of developer"  className="pl-32"/>
+      </div>
+      <AnimatedTitle text="Turning Vision Into Reality With Code And Design."/>
     </div>
-    <AnimatedTitle text="Turning Vision Into Reality With Code And Design."/>
   </>);
 }
