@@ -10,10 +10,12 @@ export default function Page() {
       <div className="w-1/2">
         <Image src={profilePic} alt="Picture of developer"  className="pl-32"/>
       </div>
+      <div className="w-1/2">
       <AnimatedTitle 
         text="Turning Vision Into Reality With Code And Design."
         className="text-6xl text-left"
       />
+      </div>
     </div>
   </>);
 }
