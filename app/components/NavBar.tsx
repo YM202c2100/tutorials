@@ -41,22 +41,22 @@ const NavBar:React.FC = () =>{
       </div>
 
       <nav className="flex">
-        <motion.a href="https://x.com" target="_blank" whileHover={{scale:1.1, y:-2}}>
+        <motion.a href="https://x.com" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 mr-3">
           <TwitterIcon className=""/>
         </motion.a>
-        <motion.a href="https://github.com" target="_blank" whileHover={{scale:1.1, y:-2}}>
+        <motion.a href="https://github.com" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 mx-3">
           <GithubIcon className=""/>
         </motion.a>
-        <motion.a href="https://linkedIn.com" target="_blank" whileHover={{scale:1.1, y:-2}}>
+        <motion.a href="https://linkedIn.com" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 mx-3">
           <LinkedInIcon className=""/>
         </motion.a>
-        <motion.a href="https://pinterest.jp" target="_blank" whileHover={{scale:1.1, y:-2}}>
+        <motion.a href="https://pinterest.jp" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 mx-3">
           <PinterestIcon className=""/>
         </motion.a>
-        <motion.a href="https://dribbble.com" target="_blank" whileHover={{scale:1.1, y:-2}}>
+        <motion.a href="https://dribbble.com" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 mx-3">
           <DribbbleIcon className=""/>
         </motion.a>
-        <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}}>T</motion.a>
+        <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} className="w-6 ml-3">T</motion.a>
       </nav>
     </header>
   )
