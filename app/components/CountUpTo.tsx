@@ -10,7 +10,7 @@ interface CUTProps{
 const CountUpTo:React.FC<CUTProps> = ({value})=>{
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref)
-  const count = useSpring(0)
+  const count = useSpring(0, {duration:3000, bounce:0})
 
   useEffect(()=>{
     if(isInView){
