@@ -17,6 +17,11 @@ const CountUpTo:React.FC<CUTProps> = ({value})=>{
       count.set(value)
     }
   },[isInView])
+
+  useEffect(()=>{
+    count.on("change", (latest)=>{console.log(latest)})
+  },[])
+
   return(
     <span ref={ref}>{value}</span>
   )
