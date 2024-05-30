@@ -5,9 +5,10 @@ import { useEffect, useRef } from "react"
 
 interface CUTProps{
   value: number
+  className?: string
 }
 
-const CountUpTo:React.FC<CUTProps> = ({value})=>{
+const CountUpTo:React.FC<CUTProps> = ({value, className})=>{
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref)
   const count = useSpring(0, {duration:3000, bounce:0})
@@ -27,7 +28,7 @@ const CountUpTo:React.FC<CUTProps> = ({value})=>{
   },[])
 
   return(
-    <span ref={ref}></span>
+    <span ref={ref} className={className}></span>
   )
 }
 
