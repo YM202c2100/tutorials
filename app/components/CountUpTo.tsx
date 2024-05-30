@@ -21,7 +21,7 @@ const CountUpTo:React.FC<CUTProps> = ({value})=>{
   useEffect(()=>{
     count.on("change", (latest)=>{
       if(ref.current){
-        ref.current.textContent = latest
+        ref.current.textContent = latest.toFixed(0)
       }
     })
   },[])
