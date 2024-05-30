@@ -1,6 +1,6 @@
 "use client"
 
-import { useInView } from "framer-motion"
+import { useInView, useSpring } from "framer-motion"
 import { useEffect, useRef } from "react"
 
 interface CUTProps{
@@ -10,6 +10,7 @@ interface CUTProps{
 const CountUpTo:React.FC<CUTProps> = ({value})=>{
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref)
+  const count = useSpring(0)
 
   useEffect(()=>{
     if(isInView){
