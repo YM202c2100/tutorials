@@ -14,7 +14,7 @@ const CountUpTo:React.FC<CUTProps> = ({value})=>{
 
   useEffect(()=>{
     if(isInView){
-      console.log("inView")
+      count.set(value)
     }
   },[isInView])
   return(
