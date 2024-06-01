@@ -6,9 +6,12 @@ interface Props {
   className?:string
 }
 
-const Article:React.FC<Props> = ({title, url})=>{
+const Article:React.FC<Props> = ({title, url, className})=>{
   return(
-    <Link href={url} target="_blank">{title}</Link>
+    <Link 
+      href={url} 
+      target="_blank"
+      className={`hover:underline ${className}`}>{title}</Link>
   )
 }
 
