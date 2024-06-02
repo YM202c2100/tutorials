@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image, { StaticImageData } from "next/image"
 
@@ -14,6 +16,7 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
       href={url} 
       target="_blank"
       className={`hover:underline ${className}`}
+      onMouseMove={(e)=>{console.log(e.pageX)}}
     >
       {title}
     </Link>
