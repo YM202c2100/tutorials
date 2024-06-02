@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image, { StaticImageData } from "next/image"
 import { useRef } from "react"
+import { motion, useMotionValue } from "framer-motion"
 
 interface Props {
   title:string,
@@ -14,11 +15,14 @@ interface Props {
 const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
 
   const thumbNailRef = useRef<HTMLImageElement>(null)
+  const MotionImage = motion(Image)
+  const x = useMotionValue(0)
 
   function showThubnail(e:React.MouseEvent<HTMLAnchorElement>){
     console.log(e.pageX)
     if(thumbNailRef.current){
       thumbNailRef.current.style.display = "inline-block"
+      x.set(e.pageX)
     }
   }
 
@@ -32,17 +36,18 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
     <Link 
       href={url} 
       target="_blank"
-      className={`hover:underline ${className}`}
+      className={`relative hover:underline ${className}`}
       onMouseMove={showThubnail}
       onMouseLeave={hideThumbnail}
     >
       {title}
     </Link>
-    <Image 
+    <MotionImage 
       ref={thumbNailRef}
       src={thumbnail}
       alt="sampleThumbnailImage"
-      className="hidden"
+      className="hidden absolnute"
+      style={{x:x}}
     />
   </>)
 }
