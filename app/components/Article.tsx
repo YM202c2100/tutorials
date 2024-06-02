@@ -47,7 +47,7 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
         ref={thumbNailRef}
         src={thumbnail}
         alt="sampleThumbnailImage"
-        className="hidden absolute"
+        className="hidden absolute left-5 top-8"
         style={{x:x}}
       />
     </div>
