@@ -32,24 +32,26 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
     }
   }
 
-  return(<>
-    <Link 
-      href={url} 
-      target="_blank"
-      className={`relative hover:underline ${className}`}
-      onMouseMove={showThubnail}
-      onMouseLeave={hideThumbnail}
-    >
-      {title}
-    </Link>
-    <MotionImage 
-      ref={thumbNailRef}
-      src={thumbnail}
-      alt="sampleThumbnailImage"
-      className="hidden absolute"
-      style={{x:x}}
-    />
-  </>)
+  return(
+    <div className="relative">
+      <Link 
+        href={url} 
+        target="_blank"
+        className={`hover:underline ${className}`}
+        onMouseMove={showThubnail}
+        onMouseLeave={hideThumbnail}
+      >
+        {title}
+      </Link>
+      <MotionImage 
+        ref={thumbNailRef}
+        src={thumbnail}
+        alt="sampleThumbnailImage"
+        className="hidden absolute"
+        style={{x:x}}
+      />
+    </div>
+  )
 }
 
 export default Article
