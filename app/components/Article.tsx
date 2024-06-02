@@ -22,12 +22,19 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
     }
   }
 
+  function hideThumbnail(){
+    if(thumbNailRef.current){
+      thumbNailRef.current.style.display = "none"
+    }
+  }
+
   return(<>
     <Link 
       href={url} 
       target="_blank"
       className={`hover:underline ${className}`}
       onMouseMove={showThubnail}
+      onMouseLeave={hideThumbnail}
     >
       {title}
     </Link>
