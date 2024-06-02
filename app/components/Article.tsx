@@ -46,6 +46,7 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
       <MotionImage 
         ref={thumbNailRef}
         src={thumbnail}
+        width={300}
         alt="sampleThumbnailImage"
         className="hidden absolute left-5 top-8"
         style={{x:x}}
