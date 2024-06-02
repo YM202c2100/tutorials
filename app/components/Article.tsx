@@ -15,17 +15,19 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
 
   const thumbNailRef = useRef<HTMLImageElement>(null)
 
+  function showThubnail(e:React.MouseEvent<HTMLAnchorElement>){
+    console.log(e.pageX)
+    if(thumbNailRef.current){
+      thumbNailRef.current.style.display = "inline-block"
+    }
+  }
+
   return(<>
     <Link 
       href={url} 
       target="_blank"
       className={`hover:underline ${className}`}
-      onMouseMove={(e)=>{
-        console.log(e.pageX)
-        if(thumbNailRef.current){
-          thumbNailRef.current.style.display = "inline-block"
-        }
-      }}
+      onMouseMove={showThubnail}
     >
       {title}
     </Link>
