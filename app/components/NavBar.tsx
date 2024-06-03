@@ -39,21 +39,11 @@ const NavBar:React.FC = () =>{
       <Logo className="absolute left-1/2 top-2 translate-x-[-50%]"/>
 
       <nav className="flex">
-        <motion.a href="https://x.com" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mr-3">
-          <TwitterIcon className=""/>
-        </motion.a>
-        <motion.a href="https://github.com" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mx-3">
-          <GithubIcon className=""/>
-        </motion.a>
-        <motion.a href="https://linkedIn.com" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mx-3">
-          <LinkedInIcon className=""/>
-        </motion.a>
-        <motion.a href="https://pinterest.jp" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mx-3">
-          <PinterestIcon className=""/>
-        </motion.a>
-        <motion.a href="https://dribbble.com" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mx-3">
-          <DribbbleIcon className=""/>
-        </motion.a>
+        <TwitterIcon className="w-6 mr-3"/>
+        <GithubIcon className="w-6 mx-3"/>
+        <LinkedInIcon className="w-6 mx-3"/>
+        <PinterestIcon className="w-6 mx-3"/>
+        <DribbbleIcon className="w-6 mx-3"/>
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
       </nav>
     </header>
