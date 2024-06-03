@@ -48,7 +48,7 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
         src={thumbnail}
         width={300}
         alt="sampleThumbnailImage"
-        className="hidden absolute left-[-8vw] top-8 rounded-lg z-50"
+        className="hidden absolute left-[-8vw] top-8 rounded-lg z-50 border border-slate-800"
         style={{x:x}}
       />
     </div>
