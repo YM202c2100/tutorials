@@ -36,9 +36,7 @@ const NavBar:React.FC = () =>{
         <CustomNavLink href="/articles" title="Articles" className="ml-4"/>
       </nav>
 
-      <div className="absolute left-1/2 top-2 translate-x-[-50%]">
-        <Logo/>
-      </div>
+      <Logo className="absolute left-1/2 top-2 translate-x-[-50%]"/>
 
       <nav className="flex">
         <motion.a href="https://x.com" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 mr-3">

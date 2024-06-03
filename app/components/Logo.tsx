@@ -5,7 +5,11 @@ import { motion } from "framer-motion"
 
 
 const MotionLink = motion(Link)
-const Logo = ()=>{
+
+interface LogoProps{
+  className?:string
+}
+const Logo:React.FC<LogoProps> = ({className})=>{
   return(
     <div>
       <MotionLink
