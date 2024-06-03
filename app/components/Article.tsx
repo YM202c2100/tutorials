@@ -33,11 +33,11 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
   }
 
   return(
-    <div className="relative p-2 border-2 border-black rounded-md w-4/5 mx-auto">
+    <div className={`relative p-2 border-2 border-black rounded-md w-4/5 mx-auto ${className}`}>
       <Link 
         href={url} 
         target="_blank"
-        className={`hover:underline ${className}`}
+        className={"hover:underline"}
         onMouseMove={showThubnail}
         onMouseLeave={hideThumbnail}
       >
