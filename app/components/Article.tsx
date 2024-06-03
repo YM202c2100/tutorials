@@ -33,7 +33,7 @@ const Article:React.FC<Props> = ({title, url, thumbnail, className})=>{
   }
 
   return(
-    <div className="relative">
+    <div className="relative p-2 border-2 border-black rounded-md w-4/5 mx-auto">
       <Link 
         href={url} 
         target="_blank"
