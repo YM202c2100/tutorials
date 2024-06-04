@@ -15,7 +15,7 @@ interface LogoProps{
 
 const PopupMenu:React.FC = ()=>{
   return(
-    <div className="w-[60vw] h-[50vh] bg-red-500 absolute top-0 left-0 -translate-x-1/2 translate-y-1/2">
+    <div className="w-[60vw] h-[50vh] bg-red-500 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2">
 
     </div>
   )
