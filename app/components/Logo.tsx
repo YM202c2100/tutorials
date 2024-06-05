@@ -16,7 +16,14 @@ interface LogoProps{
 const PopupMenu:React.FC = ()=>{
   return(
     <div className="w-[60vw] h-[50vh] bg-red-500 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2">
-
+      <nav className="flex items-center justify-center">
+        <TwitterIcon className="w-6 mr-3"/>
+        <GithubIcon className="w-6 mx-3"/>
+        <LinkedInIcon className="w-6 mx-3"/>
+        <PinterestIcon className="w-6 mx-3"/>
+        <DribbbleIcon className="w-6 mx-3"/>
+        <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
+      </nav>
     </div>
   )
 }
