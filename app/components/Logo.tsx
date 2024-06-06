@@ -52,7 +52,7 @@ const PopupMenu:React.FC<PopupProps> = ({toggleMenu})=>{
         <DribbbleIcon className="w-6 mx-3"/>
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
       </nav>
-      <nav className="items-center flex flex-col">
+      <nav className="items-center flex flex-col space-y-2">
         <CustomLink href="/" title="Home" toggleMenu={toggleMenu}/>
         <CustomLink href="/about" title="About" toggleMenu={toggleMenu}/>
         <CustomLink href="/projects" title="Projects" toggleMenu={toggleMenu}/>
