@@ -6,34 +6,31 @@ import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
 import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons"
+import { AddUnderLine } from "./Helpers"
 
 interface PropsCNL{
   href:string,
   title:string,
   className?:string
 }
-const CustomNavLink:React.FC<PropsCNL> = ({href,title,className})=>{
-  const currentPath = usePathname()
-  return(<>
-    <div className={`${className} group`}>
-      <Link 
-        href={href}
-      >
+const CustomNavLink:React.FC<PropsCNL> = ({href,title})=>{
+  return(
+    <AddUnderLine href={href} lineStyle="bg-black h-[2px]">
+      <Link href={href}>
         {title}
       </Link>
-      <span className={`bg-black block h-0.5 group-hover:w-full transition-[width] duration-150 ease-in ${(currentPath===href)?"w-full":"w-0"}`}>&nbsp;</span>
-    </div>
-    </>)
+    </AddUnderLine>
+  )
 }
 
 const NavBar:React.FC = () =>{
   return (
     <header className="flex justify-between items-center py-8 mx-32">
-      <nav className="flex">
-        <CustomNavLink href="/" title="Home" className="mr-4"/>
-        <CustomNavLink href="/about" title="About" className="mx-4"/>
-        <CustomNavLink href="/projects" title="Projects" className="mx-4"/>
-        <CustomNavLink href="/articles" title="Articles" className="ml-4"/>
+      <nav className="flex space-x-8">
+        <CustomNavLink href="/" title="Home"/>
+        <CustomNavLink href="/about" title="About"/>
+        <CustomNavLink href="/projects" title="Projects"/>
+        <CustomNavLink href="/articles" title="Articles"/>
       </nav>
 
       <Logo className="absolute left-1/2 top-2 translate-x-[-50%]"/>
