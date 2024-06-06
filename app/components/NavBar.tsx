@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import Logo from "./Logo"
-import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
 import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons"
