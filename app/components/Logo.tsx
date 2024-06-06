@@ -53,22 +53,10 @@ const PopupMenu:React.FC<PopupProps> = ({toggleMenu})=>{
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
       </nav>
       <nav className="items-center flex flex-col">
-        <Link href="/" className="text-white group" onClick={()=>toggleMenu(false)}>
-          Home
-          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
-        </Link>
-        <Link href="/about" className="text-white group" onClick={()=>toggleMenu(false)}>
-          About
-          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
-        </Link>
-        <Link href="/projects" className="text-white group" onClick={()=>toggleMenu(false)}>
-          Projects
-          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
-        </Link>
-        <Link href="/articles" className="text-white group" onClick={()=>toggleMenu(false)}>
-          Articles
-          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
-        </Link>
+        <CustomLink href="/" title="Home" toggleMenu={toggleMenu}/>
+        <CustomLink href="/about" title="About" toggleMenu={toggleMenu}/>
+        <CustomLink href="/projects" title="Projects" toggleMenu={toggleMenu}/>
+        <CustomLink href="/articles" title="Articles" toggleMenu={toggleMenu}/>
       </nav>
     </div>
   )
