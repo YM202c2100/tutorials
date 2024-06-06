@@ -13,7 +13,11 @@ interface LogoProps{
   className?:string
 }
 
-const PopupMenu:React.FC = ()=>{
+interface PopupProps{
+  toggleMenu: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const PopupMenu:React.FC<PopupProps> = ({toggleMenu})=>{
   return(
     <div className="w-[60vw] h-[50vh] backdrop-blur-md bg-black/70 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-lg">
       <nav className="flex items-center justify-center">
@@ -23,6 +27,24 @@ const PopupMenu:React.FC = ()=>{
         <PinterestIcon className="w-6 mx-3"/>
         <DribbbleIcon className="w-6 mx-3"/>
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
+      </nav>
+      <nav className="items-center flex flex-col">
+        <Link href="/" className="text-white group" onClick={()=>toggleMenu(false)}>
+          Home
+          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
+        </Link>
+        <Link href="/about" className="text-white group" onClick={()=>toggleMenu(false)}>
+          About
+          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
+        </Link>
+        <Link href="/projects" className="text-white group" onClick={()=>toggleMenu(false)}>
+          Projects
+          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
+        </Link>
+        <Link href="/articles" className="text-white group" onClick={()=>toggleMenu(false)}>
+          Articles
+          <div className="w-0 group-hover:w-full h-0.5 relative -translate-y-[2px] bg-white ease-in transition-[width]"/>  
+        </Link>
       </nav>
     </div>
   )
@@ -47,7 +69,7 @@ const Logo:React.FC<LogoProps> = ({className})=>{
         CB
       </motion.button>
 
-      {isMenuOpen && <PopupMenu/>}
+      {isMenuOpen && <PopupMenu toggleMenu={toggleMenu}/>}
     </div>
   )
 }
