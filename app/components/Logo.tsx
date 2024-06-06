@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 
 import { DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, TwitterIcon } from "./Icons"
+import { AddUnderLine } from "./Helpers"
 
 
 const MotionLink = motion(Link)
@@ -15,6 +16,29 @@ interface LogoProps{
 
 interface PopupProps{
   toggleMenu: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+interface CustomLinkProps{
+  href:string
+  title:string
+  toggleMenu:React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const CustomLink:React.FC<CustomLinkProps> = ({href, title, toggleMenu})=>{
+  return(
+    <AddUnderLine 
+      href={href} 
+      lineStyle="bg-white h-[2px] -translate-y-[2px]"
+    >
+      <Link 
+        href={href}
+        className="text-white" 
+        onClick={()=>toggleMenu(false)}
+      >
+        {title}
+      </Link>
+    </AddUnderLine>
+  )
 }
 
 const PopupMenu:React.FC<PopupProps> = ({toggleMenu})=>{
