@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 interface Props{
   href:string
   lineStyle:string
-  children?:React.ReactNode
+  children:React.ReactNode
 }
 
 const AddUnderLine:React.FC<Props> = ({href,lineStyle,children})=>{
