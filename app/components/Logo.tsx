@@ -38,7 +38,7 @@ const Logo:React.FC<LogoProps> = ({className})=>{
 
   const PopupMenu:React.FC = ()=>{
     return(
-      <div className="min-w-[60vw] h-[50vh] backdrop-blur-md bg-black/70 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-lg">
+      <div className="min-w-[60vw] backdrop-blur-md bg-black/70 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-lg">
         <nav className="items-center flex flex-col space-y-2">
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
