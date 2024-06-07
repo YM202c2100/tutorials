@@ -58,7 +58,7 @@ const Logo:React.FC<LogoProps> = ({className})=>{
   }
 
 
-  return(
+  return(<>
     <div className={`${className}`}>
       <motion.button
         className="text-white font-bold text-2xl bg-black rounded-full flex w-16 h-16 justify-center items-center"
@@ -72,10 +72,10 @@ const Logo:React.FC<LogoProps> = ({className})=>{
       >
         CB
       </motion.button>
-
-      {isMenuOpen && <PopupMenu/>}
     </div>
-  )
+    
+    {isMenuOpen && <PopupMenu/>}
+  </>)
 }
 
 export default Logo
