@@ -39,6 +39,12 @@ const Logo:React.FC<LogoProps> = ({className})=>{
   const PopupMenu:React.FC = ()=>{
     return(
       <div className="w-[60vw] h-[50vh] backdrop-blur-md bg-black/70 fixed top-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 rounded-lg">
+        <nav className="items-center flex flex-col space-y-2">
+          <CustomLink href="/" title="Home" />
+          <CustomLink href="/about" title="About" />
+          <CustomLink href="/projects" title="Projects" />
+          <CustomLink href="/articles" title="Articles" />
+        </nav>
         <nav className="flex items-center justify-center">
           <TwitterIcon className="w-6 mr-3"/>
           <GithubIcon className="w-6 mx-3"/>
@@ -46,12 +52,6 @@ const Logo:React.FC<LogoProps> = ({className})=>{
           <PinterestIcon className="w-6 mx-3"/>
           <DribbbleIcon className="w-6 mx-3"/>
           <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
-        </nav>
-        <nav className="items-center flex flex-col space-y-2">
-          <CustomLink href="/" title="Home" />
-          <CustomLink href="/about" title="About" />
-          <CustomLink href="/projects" title="Projects" />
-          <CustomLink href="/articles" title="Articles" />
         </nav>
       </div>
     )
