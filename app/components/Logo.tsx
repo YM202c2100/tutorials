@@ -39,13 +39,13 @@ const Logo:React.FC<LogoProps> = ({className})=>{
   const PopupMenu:React.FC = ()=>{
     return(
       <div className="min-w-[60vw] backdrop-blur-md bg-black/70 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg">
-        <nav className="items-center flex flex-col space-y-2">
+        <nav className="items-center flex flex-col space-y-2 p-5">
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
           <CustomLink href="/projects" title="Projects" />
           <CustomLink href="/articles" title="Articles" />
         </nav>
-        <nav className="flex items-center justify-center">
+        <nav className="flex items-center justify-center p-6 pt-0">
           <TwitterIcon className="w-6 mr-3"/>
           <GithubIcon className="w-6 mx-3"/>
           <LinkedInIcon className="w-6 mx-3"/>
