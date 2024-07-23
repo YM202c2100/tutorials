@@ -34,14 +34,14 @@ const NavBar:React.FC = () =>{
         <CustomNavLink href="/articles" title="Articles"/>
       </nav>
 
-      {/* <nav className="flex">
-        <TwitterIcon className="w-6 mr-3"/>
-        <GithubIcon className="w-6 mx-3"/>
-        <LinkedInIcon className="w-6 mx-3"/>
-        <PinterestIcon className="w-6 mx-3"/>
-        <DribbbleIcon className="w-6 mx-3"/>
+      <nav className="fixed top-0 right-0 flex space-x-1 mt-2">
+        <TwitterIcon className="w-5"/>
+        <GithubIcon className="w-5"/>
+        <LinkedInIcon className="w-5"/>
+        <PinterestIcon className="w-5"/>
+        <DribbbleIcon className="w-5"/>
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
-      </nav> */}
+      </nav>
     </header>
   )
 }
