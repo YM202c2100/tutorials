@@ -15,8 +15,8 @@ const Content:React.FC<ContentProps> = ({color})=>{
 
 const Slider:React.FC = ()=>{
   return(
-    <div>
-      <div className="flex">
+    <div className="mt-20">
+      <div className="flex space-x-1 mx-10">
         <Content color={"bg-blue-400"}/>
         <Content color={"bg-red-400"}/>
         <Content color={"bg-green-400"}/>
