@@ -29,6 +29,7 @@ const Slider:React.FC = ()=>{
   }
 
   const dragStartHandler = (e:React.MouseEvent) =>{
+    e.preventDefault()
     startDrag(true)
     setInitialX(e.pageX)
     if(carouselRef.current){
