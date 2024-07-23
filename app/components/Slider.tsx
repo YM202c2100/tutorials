@@ -1,4 +1,5 @@
 "use client"
+import { useRef } from "react"
 
 interface ContentProps{
   color:string
@@ -14,9 +15,21 @@ const Content:React.FC<ContentProps> = ({color})=>{
 }
 
 const Slider:React.FC = ()=>{
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  const dragging = (e:React.MouseEvent)=>{
+    if(carouselRef.current){
+      carouselRef.current.scrollLeft = e.pageX
+    }
+  }
+
   return(
-    <div className="mt-20 overflow-hidden mx-10">
-      <div className="flex space-x-1">
+    <div className="mt-20 mx-10">
+      <div 
+        ref={carouselRef} 
+        className="flex space-x-1 overflow-hidden"
+        onMouseMove={dragging}
+      >
         <Content color={"bg-blue-400"}/>
         <Content color={"bg-red-400"}/>
         <Content color={"bg-green-400"}/>
