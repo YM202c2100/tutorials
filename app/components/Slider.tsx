@@ -6,7 +6,7 @@ interface ContentProps{
 const Content:React.FC<ContentProps> = ({color})=>{
   return(
     <div className={`
-      w-1/3 aspect-square
+      w-full sm:w-1/2 md:w-1/3 aspect-square
       flex-shrink-0
       ${color}`}>
     </div>
