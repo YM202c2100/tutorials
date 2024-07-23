@@ -24,7 +24,7 @@ const CustomNavLink:React.FC<PropsCNL> = ({href,title})=>{
 
 const NavBar:React.FC = () =>{
   return (
-    <header className="flex flex-col md:flex-row justify-center md:justify-between items-center mt-20 md:mt-14 md:mx-4">
+    <header className="flex flex-col md:flex-row justify-center md:justify-between items-center mb-5 mt-20 md:mt-14 md:mx-4">
       <Logo className="fixed top-3 left-1/2 -translate-x-1/2"/>
 
       <nav className="flex space-x-8">
