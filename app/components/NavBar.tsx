@@ -24,15 +24,15 @@ const CustomNavLink:React.FC<PropsCNL> = ({href,title})=>{
 
 const NavBar:React.FC = () =>{
   return (
-    <header className="flex justify-center items-center py-8">
+    <header className="flex flex-col justify-center items-center mt-20">
+      <Logo className="fixed top-3 left-1/2 -translate-x-1/2"/>
+
       <nav className="flex space-x-8">
         <CustomNavLink href="/" title="Home"/>
         <CustomNavLink href="/about" title="About"/>
         <CustomNavLink href="/projects" title="Projects"/>
         <CustomNavLink href="/articles" title="Articles"/>
       </nav>
-
-      {/* <Logo className=" left-1/2 top-2 translate-x-[-50%]"/> */}
 
       {/* <nav className="flex">
         <TwitterIcon className="w-6 mr-3"/>
