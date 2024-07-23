@@ -24,7 +24,7 @@ const CustomNavLink:React.FC<PropsCNL> = ({href,title})=>{
 
 const NavBar:React.FC = () =>{
   return (
-    <header className="flex flex-col justify-center items-center mt-20">
+    <header className="flex flex-col md:flex-row justify-center md:justify-between items-center mt-20 md:mt-14 md:mx-4">
       <Logo className="fixed top-3 left-1/2 -translate-x-1/2"/>
 
       <nav className="flex space-x-8">
@@ -34,12 +34,12 @@ const NavBar:React.FC = () =>{
         <CustomNavLink href="/articles" title="Articles"/>
       </nav>
 
-      <nav className="fixed top-0 right-0 flex space-x-1 mt-2">
-        <TwitterIcon className="w-5"/>
-        <GithubIcon className="w-5"/>
-        <LinkedInIcon className="w-5"/>
-        <PinterestIcon className="w-5"/>
-        <DribbbleIcon className="w-5"/>
+      <nav className="fixed md:static top-0 right-0 flex space-x-1 md:space-x-3 mt-2">
+        <TwitterIcon className="w-5 md:w-6"/>
+        <GithubIcon className="w-5 md:w-6"/>
+        <LinkedInIcon className="w-5 md:w-6"/>
+        <PinterestIcon className="w-5 md:w-6"/>
+        <DribbbleIcon className="w-5 md:w-6"/>
         <motion.a href="/" target="_blank" whileHover={{scale:1.1, y:-2}} whileTap={{scale:0.9}} className="w-6 ml-3">T</motion.a>
       </nav>
     </header>
