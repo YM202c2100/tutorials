@@ -20,20 +20,31 @@ const Slider:React.FC = ()=>{
   const [prevScroll, setPrevScroll] = useState<number>(0)
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const scrollByDragging = (e:React.MouseEvent)=>{
+  function getPageX(e:React.MouseEvent|React.TouchEvent):number{
+    if("touches" in e){
+      return e.touches[0].pageX
+    }else{
+      return e.pageX
+    }
+  }
+
+  const scrollByDragging = (e:React.MouseEvent|React.TouchEvent)=>{
     if(carouselRef.current && isDragging){
-      const draggedDistance = initialPageX - e.pageX
+      const draggedDistance = initialPageX - getPageX(e)
       const scrollVal = prevScroll + draggedDistance
       carouselRef.current.scrollLeft = scrollVal
     }
   }
 
-  const dragStart = (e:React.MouseEvent) =>{
-    e.preventDefault()
+  const dragStart = (e:React.MouseEvent|React.TouchEvent) =>{
     setDragging(true)
-    setInitialX(e.pageX)
-    if(carouselRef.current){
-      setPrevScroll(carouselRef.current.scrollLeft)
+
+    if(!carouselRef.current) return
+    setPrevScroll(carouselRef.current.scrollLeft)
+    setInitialX(getPageX(e))
+
+    if(e.nativeEvent instanceof MouseEvent){
+      e.preventDefault()
     }
   }
 
@@ -43,8 +54,11 @@ const Slider:React.FC = ()=>{
         ref={carouselRef} 
         className="flex space-x-1 overflow-hidden"
         onMouseMove={scrollByDragging}
+        onTouchMove={scrollByDragging}
         onMouseDown={dragStart}
+        onTouchStart={dragStart}
         onMouseUp={()=>{setDragging(false)}}
+        onTouchEnd={()=>{setDragging(false)}}
         onMouseLeave={()=>{setDragging(false)}}
       >
         <Content color={"bg-blue-400"}/>
