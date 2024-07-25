@@ -43,6 +43,21 @@ const Slider:React.FC = ()=>{
     return contentWidth/2
   }
 
+  function autoDrag(draggedDistance:number){
+    if(!carouselRef.current) return
+    const carousel = carouselRef.current
+    const contentHalfWidth = getContentHalfWidth(carousel)
+
+    if(draggedDistance > 0){
+      if(draggedDistance < contentHalfWidth){
+        carousel.scrollLeft -= draggedDistance
+      }else{
+        carousel.scrollLeft += contentHalfWidth*2 - draggedDistance
+      }
+    }
+
+  }
+
   const scrollByDragging = (e:React.MouseEvent|React.TouchEvent)=>{
     if(carouselRef.current && isDragging){
       const draggedDistance = initialPageX - getPageX(e)
@@ -62,13 +77,12 @@ const Slider:React.FC = ()=>{
       e.preventDefault()
     }
   }
-  
+
   const dragEnd = (e:React.MouseEvent|React.TouchEvent)=>{
     setDragging(false)
     
-    if(!carouselRef.current) return
     const draggedDistance = initialPageX - getPageX(e)
-    console.log(Math.abs(draggedDistance) > getContentHalfWidth(carouselRef.current))
+    autoDrag(draggedDistance)
   }
 
 
