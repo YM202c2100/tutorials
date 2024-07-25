@@ -28,6 +28,21 @@ const Slider:React.FC = ()=>{
     }
   }
 
+  function getContentHalfWidth(parentDiv:HTMLDivElement):number{
+    const parentWidth = parentDiv.offsetWidth
+
+    let contentWidth
+    if(parentWidth < 640){
+      contentWidth = parentWidth
+    }else if(parentWidth < 768){
+      contentWidth = parentWidth/2
+    }else{
+      contentWidth = parentWidth/3
+    }
+
+    return contentWidth/2
+  }
+
   const scrollByDragging = (e:React.MouseEvent|React.TouchEvent)=>{
     if(carouselRef.current && isDragging){
       const draggedDistance = initialPageX - getPageX(e)
