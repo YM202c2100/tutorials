@@ -62,6 +62,11 @@ const Slider:React.FC = ()=>{
       e.preventDefault()
     }
   }
+  
+  const dragEnd = (e:React.MouseEvent|React.TouchEvent)=>{
+    setDragging(false)
+  }
+
 
   return(
     <div className="mt-20 mx-10">
@@ -72,7 +77,7 @@ const Slider:React.FC = ()=>{
         onTouchMove={scrollByDragging}
         onMouseDown={dragStart}
         onTouchStart={dragStart}
-        onMouseUp={()=>{setDragging(false)}}
+        onMouseUp={dragEnd}
         onTouchEnd={()=>{setDragging(false)}}
         onMouseLeave={()=>{setDragging(false)}}
       >
