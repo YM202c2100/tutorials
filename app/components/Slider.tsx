@@ -65,6 +65,10 @@ const Slider:React.FC = ()=>{
   
   const dragEnd = (e:React.MouseEvent|React.TouchEvent)=>{
     setDragging(false)
+    
+    if(!carouselRef.current) return
+    const draggedDistance = initialPageX - getPageX(e)
+    console.log(Math.abs(draggedDistance) > getContentHalfWidth(carouselRef.current))
   }
 
 
