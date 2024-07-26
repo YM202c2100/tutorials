@@ -82,7 +82,7 @@ const Slider:React.FC = ()=>{
     setDragging(false)
     
     const draggedDistance = initialPageX - getPageX(e)
-    autoDrag(draggedDistance)
+    setTimeout(()=>{autoDrag(draggedDistance)},0.1)
   }
 
 
@@ -90,7 +90,7 @@ const Slider:React.FC = ()=>{
     <div className="mt-20 mx-10">
       <div 
         ref={carouselRef} 
-        className="flex space-x-1 overflow-hidden"
+        className={`flex space-x-1 overflow-hidden ${isDragging ? "scroll-auto":"scroll-smooth"}`}
         onMouseMove={scrollByDragging}
         onTouchMove={scrollByDragging}
         onMouseDown={dragStart}
