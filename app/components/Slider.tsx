@@ -54,8 +54,13 @@ const Slider:React.FC = ()=>{
       }else{
         carousel.scrollLeft += contentHalfWidth*2 - draggedDistance + 4
       }
+    }else{
+      if(Math.abs(draggedDistance) < contentHalfWidth){
+        carousel.scrollLeft += Math.abs(draggedDistance)
+      }else{
+        carousel.scrollLeft -= contentHalfWidth*2 - draggedDistance + 4
+      }
     }
-
   }
 
   const scrollByDragging = (e:React.MouseEvent|React.TouchEvent)=>{
