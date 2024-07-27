@@ -47,12 +47,10 @@ const Slider:React.FC = ()=>{
     if(!carouselRef.current) return
     const carousel = carouselRef.current
     const contentHalfWidth = getContentHalfWidth(carousel)
-    let absDraggedDist = Math.abs(draggedDistance)
 
     // 一つ以上のスライダー要素をまたいだ際における、後の計算の調整処理
-    if(absDraggedDist > 2*contentHalfWidth){
+    if(Math.abs(draggedDistance) > 2*contentHalfWidth){
       draggedDistance = draggedDistance -(2*contentHalfWidth+4) * Math.trunc(draggedDistance/(contentHalfWidth*2))
-      absDraggedDist = Math.abs(draggedDistance)
     }
 
     if(draggedDistance < contentHalfWidth){
