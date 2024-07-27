@@ -55,19 +55,10 @@ const Slider:React.FC = ()=>{
       absDraggedDist = Math.abs(draggedDistance)
     }
 
-
-    if(draggedDistance > 0){
-      if(draggedDistance < contentHalfWidth){
-        carousel.scrollLeft -= draggedDistance
-      }else{
-        carousel.scrollLeft += contentHalfWidth*2 - draggedDistance + 4
-      }
+    if(draggedDistance < contentHalfWidth){
+      carousel.scrollLeft -= draggedDistance
     }else{
-      if(absDraggedDist < contentHalfWidth){
-        carousel.scrollLeft += absDraggedDist
-      }else{
-        carousel.scrollLeft -= contentHalfWidth*2 - absDraggedDist
-      }
+      carousel.scrollLeft += (contentHalfWidth*2 - Math.abs(draggedDistance) + 4)*Math.sign(draggedDistance)
     }
   }
 
