@@ -43,6 +43,19 @@ const Slider:React.FC = ()=>{
     return contentWidth/2
   }
 
+  function isSliderEdge(carousel:HTMLDivElement):boolean{
+    const currentScroll = Math.round(carousel.scrollLeft)
+    const maxScrollWidth = carousel.scrollWidth - carousel.clientWidth
+
+    if(currentScroll >= maxScrollWidth){
+      return true
+    }else if(currentScroll === 0){
+      return true
+    }
+
+    return false
+  }
+
   function autoDrag(draggedDistance:number){
     if(!carouselRef.current) return
     const carousel = carouselRef.current
@@ -82,6 +95,10 @@ const Slider:React.FC = ()=>{
 
   const dragEnd = (e:React.MouseEvent|React.TouchEvent)=>{
       setDragging(false)
+
+      if(carouselRef.current && isSliderEdge(carouselRef.current)){
+        return
+      }
       
       const draggedDistance = initialPageX - getPageX(e)
       setTimeout(()=>{autoDrag(draggedDistance)},0.1)
