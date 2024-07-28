@@ -105,7 +105,6 @@ const Slider:React.FC = ()=>{
       <div 
         className={`
           absolute inset-0 
-          bg-gray-500 opacity-50 
           ${isDragging ? "pointer-events-auto":"pointer-events-none"}`
         }
         onMouseMove={scrollByDragging} onTouchMove={scrollByDragging}
