@@ -81,10 +81,10 @@ const Slider:React.FC = ()=>{
   }
 
   const dragEnd = (e:React.MouseEvent|React.TouchEvent)=>{
-    setDragging(false)
-    
-    const draggedDistance = initialPageX - getPageX(e)
-    setTimeout(()=>{autoDrag(draggedDistance)},0.1)
+      setDragging(false)
+      
+      const draggedDistance = initialPageX - getPageX(e)
+      setTimeout(()=>{autoDrag(draggedDistance)},0.1)
   }
 
 
@@ -93,13 +93,8 @@ const Slider:React.FC = ()=>{
       <div 
         ref={carouselRef} 
         className={`flex space-x-1 overflow-hidden ${isDragging ? "scroll-auto":"scroll-smooth"}`}
-        onMouseMove={scrollByDragging}
-        onTouchMove={scrollByDragging}
         onMouseDown={dragStart}
         onTouchStart={dragStart}
-        onMouseUp={dragEnd}
-        onTouchEnd={dragEnd}
-        onMouseLeave={()=>{setDragging(false)}}
       >
         <Content color={"bg-blue-400"}/>
         <Content color={"bg-red-400"}/>
@@ -108,7 +103,13 @@ const Slider:React.FC = ()=>{
         <Content color={"bg-gray-400"}/>
       </div>
       <div 
-        className="absolute inset-0 bg-gray-500 opacity-50"
+        className={`
+          absolute inset-0 
+          bg-gray-500 opacity-50 
+          ${isDragging ? "pointer-events-auto":"pointer-events-none"}`
+        }
+        onMouseMove={scrollByDragging} onTouchMove={scrollByDragging}
+        onMouseUp={dragEnd} onTouchEnd={dragEnd}
       ></div>
     </div>
   )
