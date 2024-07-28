@@ -21,8 +21,8 @@ const Slider:React.FC = ()=>{
   const carouselRef = useRef<HTMLDivElement>(null)
 
   function getPageX(e:React.MouseEvent|React.TouchEvent):number{
-    if("touches" in e){
-      return e.touches[0].pageX
+    if("changedTouches" in e){
+      return e.changedTouches[0].pageX
     }else{
       return e.pageX
     }
@@ -98,7 +98,7 @@ const Slider:React.FC = ()=>{
         onMouseDown={dragStart}
         onTouchStart={dragStart}
         onMouseUp={dragEnd}
-        onTouchEnd={()=>{setDragging(false)}}
+        onTouchEnd={dragEnd}
         onMouseLeave={()=>{setDragging(false)}}
       >
         <Content color={"bg-blue-400"}/>
