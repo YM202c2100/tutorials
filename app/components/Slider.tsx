@@ -107,6 +107,9 @@ const Slider:React.FC = ()=>{
         <Content color={"bg-yellow-400"}/>
         <Content color={"bg-gray-400"}/>
       </div>
+      <div 
+        className="absolute inset-0 bg-gray-500 opacity-50"
+      ></div>
     </div>
   )
 }
